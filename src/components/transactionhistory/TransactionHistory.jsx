@@ -14,9 +14,9 @@ export default function TransactionHistory({ transactions }) {
       </thead>
 
       <tbody>
-        {transactions.map(transaction => (
+        {transactions.map((transaction, idx) => (
           <TransactionHistoryItem
-            // className={idx % 2 === 0 ? s.first : s.second}
+            itemIdx={idx}
             key={transaction.id}
             transType={transaction.type}
             transAmount={transaction.amount}

@@ -1,12 +1,12 @@
-// import s from './transactions.module.css';
+import s from './transactions.module.css';
 import PropTypes from 'prop-types';
 
 export default function TransactionHistoryItem(props) {
   //   console.log(props);
 
-  const { transType, transAmount, transCurrency } = props;
+  const { transType, transAmount, transCurrency, itemIdx } = props;
   return (
-    <tr>
+    <tr className={itemIdx % 2 === 0 ? s.first : s.second}>
       <td>{transType}</td>
       <td>{transAmount}</td>
       <td>{transCurrency}</td>
